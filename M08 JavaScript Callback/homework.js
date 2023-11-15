@@ -5,7 +5,8 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
-  return nombre.charAt(0).toUpperCase() + nombre.slice(1)
+   return nombre.charAt(0).toUpperCase() + nombre.slice(1)
+
 }
 
 function invocarCallback(cb) {
@@ -20,8 +21,7 @@ function operacionMatematica(num1, num2, cb) {
    // El callback realiza una operación matemática, por lo que necesita de los dos números.
    // Retorna el resultado del callback pasándole como parámetros los números.
    // Tu código:
-   var resultado = cb (num1, num2);
-   return resultado
+   return cb(num1, num2)
 }
 
 function sumarArray(arrayOfNumbers, cb) {
@@ -30,11 +30,10 @@ function sumarArray(arrayOfNumbers, cb) {
    // Este resultado debes pasárselo como argumento al callback recibido.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
-   var sumaDeArray = 0
-   for (var i=0; i<arrayOfNumbers.length; i++) {
-      sumaDeArray += arrayOfNumbers[i]
-   }
-   cb(sumaDeArray)
+   var Suma = 0;
+   for (var i=0; i < arrayOfNumbers.length; i++)
+   {Suma = Suma + arrayOfNumbers[i]}
+   cb(Suma)
 }
 
 function forEach(array, cb) {
@@ -49,18 +48,16 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
-   var nuevoArreglo = array.map(elemento => cb(elemento))
-   return nuevoArreglo
+   var nuevo = array.map(elemento => cb(elemento)) 
+   return nuevo 
 }
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
-   var arreglo = arrayOfStrings;
-   var elmemntosInicianConA = arreglo.filter((elemento) => elemento.startsWith("a"));
-   return elmemntosInicianConA;
-   
+   var New = arrayOfStrings.filter(elemento => elemento.charAt(0) === "a")
+   return New
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
